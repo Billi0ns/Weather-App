@@ -46,6 +46,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "regenerator-runtime": "^0.13.7"
   }
 }

@@ -11,8 +11,102 @@
 
 html {
   font-size: 62.5%;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-h1 {
-  color: blue;
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  font-size: 6rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #fa4d56;
+}
+
+.main {
+  width: 100%;
+  max-width: 50rem;
+}
+
+.search {
+  height: 5rem;
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid #fa4d56;
+}
+
+.search__input {
+  width: 80%;
+  border: none;
+  margin-left: 1rem;
+  outline: none;
+  color: #fa4d56;
+  font-size: 2rem;
+}
+
+.search__button {
+  width: 20%;
+  border: none;
+  overflow: hidden;
+  background: #fa4d56;
+  display: flex;
+  outline: none;
+
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
+.search__button i {
+  font-size: 1.5rem;
+  padding-right: 0.5rem;
+}
+
+.search__button div {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.result {
+  font-size: 1.5rem;
+  padding: 2rem;
+  margin-top: 5rem;
+  color: #fa4d56;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// Loading animation
+.lds-dual-ring {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+}
+.lds-dual-ring:after {
+  content: ' ';
+  display: block;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border-radius: 50%;
+  border: 6px solid #fa4d56;
+  border-color: #fa4d56 transparent #fa4d56 transparent;
+  animation: lds-dual-ring 1.2s linear infinite;
+}
+@keyframes lds-dual-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

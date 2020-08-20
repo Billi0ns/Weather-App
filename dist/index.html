@@ -1,12 +1,55 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <title>Weather App</title>
+    <script
+      src="https://kit.fontawesome.com/6c7dae04b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
+
   <body>
-    <h1>Test</h1>
+    <div id="app">
+      <header class="header">
+        Weather App
+      </header>
+      <main class="main">
+        <div class="search" @keyup.enter="searchWeather">
+          <input
+            class="search__input"
+            v-model="city"
+            type="test"
+            placeholder="Search any city"
+          />
+          <button class="search__button">
+            <i class="fas fa-search"></i>
+            <div @click="searchWeather">Search</div>
+          </button>
+        </div>
+
+        <div class="result" v-if="loading">
+          <div class="lds-dual-ring"></div>
+          <div>Loading</div>
+        </div>
+
+        <div class="result" v-if="weather.name">
+          <div>City: {{weather.name}}, {{weather.sys.country}}</div>
+          <div>Humidity: {{weather.main.humidity}}%</div>
+          <div>Description: {{weather.weather[0].description}}</div>
+          <div>
+            Temperature: {{weather.main.temp}} ºC (Feels like:
+            {{weather.main.feels_like}} ºC)
+          </div>
+        </div>
+
+        <div class="result" v-if='weather.cod === "404"'>
+          City not found.
+        </div>
+      </main>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>
