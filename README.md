@@ -4,4 +4,4 @@
 
 ## Result
 
-Visit the project here: [github.io](https://billi0ns.github.io/Weather-app/)
+Visit the project here: [github.io](https://billi0ns.github.io/Weather-App/)
